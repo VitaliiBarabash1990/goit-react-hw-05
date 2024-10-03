@@ -1,0 +1,16 @@
+.wrap_img {
+	width: 150px;
+	list-style-type: none;
+}
+.img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+.not_image {
+	width: 150px;
+	border: 1px solid whitesmoke;
+}
+.border_bottom {
+	border-bottom: 1px solid whitesmoke;
+}

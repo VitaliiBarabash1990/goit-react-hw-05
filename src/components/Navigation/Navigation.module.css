@@ -1,0 +1,23 @@
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+	font-weight: 700;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 1px 5px 8px 1px #1a1a1a;
+}
+.link {
+	color: #1a1a1a;
+	font-weight: bold;
+}
+.activeLink {
+	color: #ee6a6a;
+}
+.link:hover {
+	color: #ee6a6a;
+	text-decoration: underline;
+}
+.wrapperLinks {
+	display: flex;
+	gap: 10px;
+}
