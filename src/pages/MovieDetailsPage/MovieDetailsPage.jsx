@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState } from "react";
 import { fetchMovieById } from "../../services/api";
 import {
 	Link,
@@ -30,7 +30,11 @@ const MovieDetailsPage = () => {
 	if (!details) return <h2>Loading...</h2>;
 	return (
 		<div>
-			<Link to={backLink.current}>Go back</Link>
+			<div className={s.btn_wrap}>
+				<Link to={backLink.current} className={s.btn}>
+					Go back
+				</Link>
+			</div>
 			<div className={s.wrapper}>
 				<div className={s.wrap_img}>
 					{details.backdrop_path ? (
@@ -77,7 +81,9 @@ const MovieDetailsPage = () => {
 				</ul>
 			</div>
 			<hr />
-			<Outlet />
+			<Suspense fallback={<h2>Second suspense</h2>}>
+				<Outlet />
+			</Suspense>
 		</div>
 	);
 };

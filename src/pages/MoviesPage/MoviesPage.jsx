@@ -1,14 +1,13 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import MovieList from "../../components/MovieList/MovieList";
 import SearchMovies from "../../components/SearchMovies/SearchMovies";
 import { fetchSearchByQuery } from "../../services/api";
-import { Link, useLocation, useSearchParams } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 
 const MoviesPage = () => {
 	const [searchMovie, setSearchMovie] = useState([]);
 	const [searchParams, setSearchParams] = useSearchParams();
 	const location = useLocation();
-	const backLink = useRef(location.state ?? "/movies");
 
 	const query = searchParams.get("query") ?? "";
 
@@ -30,7 +29,6 @@ const MoviesPage = () => {
 
 	return (
 		<div>
-			<Link to={backLink.current}>Go back</Link>
 			<SearchMovies handleChangeQuery={handleChangeQuery} />
 			<MovieList lists={searchMovie} state={location} />
 		</div>
